@@ -1,17 +1,20 @@
 ---
 import Foto from './Foto.astro';
 import fotos from '../data/fotos.json';
+import textos from '../data/textos.json';
+import { emify } from '../lib/emify';
+const t = textos.album;
 const hayFotosReales = fotos.album.some((f) => f.src);
 ---
 
 <section id="album" class="rule-top">
   <div class="wrap">
     <div class="kicker">
-      <h2>La casa <em>por dentro</em></h2>
+      <h2 set:html={emify(t.titulo)} />
       {
         !hayFotosReales && (
           <span class="marg" style="transform:rotate(-2deg)">
-            pronto, fotos de verdad
+            {t.notaMargen}
           </span>
         )
       }

@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import textos from '../data/textos.json';
 
 const eventos = (await getCollection('eventos', ({ data }) => data.activo)).sort(
   (a, b) => a.data.orden - b.data.orden
@@ -15,7 +16,7 @@ const rendered = await Promise.all(
 
 <section id="eventos" class="rule-top">
   <div class="wrap">
-    <div class="kicker"><h2>Novedades</h2></div>
+    <div class="kicker"><h2>{textos.eventos.titulo}</h2></div>
     <div class="clips">
       {
         rendered.map(({ evento, Content }) => (

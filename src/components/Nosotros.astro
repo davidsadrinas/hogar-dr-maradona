@@ -1,43 +1,22 @@
 ---
 import Foto from './Foto.astro';
 import fotos from '../data/fotos.json';
+import textos from '../data/textos.json';
+import { emify } from '../lib/emify';
+const t = textos.nosotros;
 ---
 
 <section id="nosotros" class="rule-top">
   <div class="wrap">
-    <div class="kicker"><span class="eyebrow">Quiénes somos</span></div>
+    <div class="kicker"><span class="eyebrow">{t.eyebrow}</span></div>
     <div class="cronica">
       <div class="body reveal">
-        <h2 style="font-size:34px;margin-bottom:16px">
-          Una casa chica, con una <em style="font-style:italic;color:var(--sun-deep)"
-            >idea grande</em
-          >: que nadie esté solo.
-        </h2>
-        <p>
-          Somos la Asociación Civil Formoseña Hogar de Tránsito para el Desamparado, una
-          entidad sin fines de lucro. Y somos, hay que decirlo con honestidad, una casa
-          chica que se maneja como lo que es: una familia.
-        </p>
-        <p>
-          Muchas familias del interior llegan a Buenos Aires porque sus hijos necesitan
-          tratamientos que no existen en su provincia. Cuando llegan, descubren que
-          quedarse cerca del hospital cuesta una fortuna que no tienen: meses de hotel,
-          comida afuera, una ciudad enorme y desconocida. Ahí tratamos de estar nosotros.
-          No podemos resolverlo todo, pero sí ofrecer lo esencial —un lugar donde dormir,
-          un plato de comida— y, sobre todo, acompañar a la familia entera para que
-          atraviese este momento sin sentirse desamparada.
-        </p>
-        <p>
-          Nacimos con raíces formoseñas, y por eso elegimos el nombre de un formoseño por
-          adopción que nos marca el camino: el Dr. Esteban Laureano Maradona.
-        </p>
-        <p class="pull">
-          No tenemos mucha estructura. Tenemos una casa, una mesa larga y la convicción de
-          que ninguna familia debería atravesar esto sola.
-        </p>
+        <h2 style="font-size:34px;margin-bottom:16px" set:html={emify(t.titulo)} />
+        {t.parrafos.map((p) => <p set:html={emify(p)} />)}
+        <p class="pull">{t.cita}</p>
         <div class="signoff">
-          <div class="sig">Vicky y el equipo del Hogar</div>
-          <div class="who">Presidenta · Asociación Civil Hogar Esteban Maradona</div>
+          <div class="sig">{t.firma}</div>
+          <div class="who">{t.cargo}</div>
         </div>
       </div>
       <div class="aside reveal">
@@ -50,7 +29,7 @@ import fotos from '../data/fotos.json';
           />
           <figcaption class="cap">{fotos.nosotros.caption}</figcaption>
         </figure>
-        <p class="note">acompañar a la familia entera, no sólo al que está enfermo ✿</p>
+        <p class="note">{t.notaManuscrita}</p>
       </div>
     </div>
   </div>

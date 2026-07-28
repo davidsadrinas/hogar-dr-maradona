@@ -8,22 +8,28 @@ Sitio estático hecho con [Astro](https://astro.build), deployado en Vercel.
 ### Opción A — Panel de administración en /admin (recomendado)
 
 Entrar a **https://hogar-dr-maradona.vercel.app/admin** (o `/login`, que redirige ahí)
-e iniciar sesión con GitHub. Desde el panel se puede:
+e iniciar sesión con **email y contraseña** (cuenta de TinaCloud — no hace falta
+GitHub). Desde el panel se puede editar TODO:
 
-- Crear, editar y despublicar **novedades y eventos** (con imagen y fecha).
-- Subir y cambiar **todas las fotos del sitio** (portada, la mesa, el retrato del
-  doctor, la historia y el álbum) con sus leyendas.
-- Editar **contacto y cuenta** (alias, CBU, CUIT, email, WhatsApp, Instagram…).
-- Editar los **números del año** y los **niveles de auspicio**.
+- **Textos y títulos** de cada sección. Convención: lo que va entre `*asteriscos*`
+  sale en cursiva color sol; entre `**doble asterisco**`, en negrita.
+- **Fotos del sitio** (portada, la mesa, el retrato del doctor, la historia, el
+  álbum) con sus leyendas, subiendo imágenes desde el Media Manager.
+- **Novedades y eventos**: crear, editar, borrar, despublicar.
+- **Contacto y cuenta** (alias, CBU, CUIT, email, WhatsApp, Instagram…).
+- **Números del año** y **niveles de auspicio**.
 
 Cada guardado hace un commit al repo y el sitio se republica solo.
 
-**Acceso:** la persona necesita una cuenta de GitHub invitada como colaboradora del
-repo (GitHub → Settings → Collaborators). El panel usa Decap CMS
-(`public/admin/config.yml` define qué se puede editar) con un login OAuth propio
-(`src/pages/api/auth.ts` y `callback.ts`). Requiere dos variables de entorno en
-Vercel: `OAUTH_GITHUB_CLIENT_ID` y `OAUTH_GITHUB_CLIENT_SECRET` (de una GitHub
-OAuth App con callback `https://hogar-dr-maradona.vercel.app/api/callback`).
+**Cómo funciona:** el panel es TinaCMS (`tina/config.ts` define qué se puede editar).
+El login y los commits van vía TinaCloud (app.tina.io — plan gratis, 2 usuarios).
+Requiere en Vercel las variables `TINA_PUBLIC_CLIENT_ID` y `TINA_TOKEN` del proyecto
+de TinaCloud (que debe estar conectado a este repo). Para invitar a alguien:
+app.tina.io → proyecto → Users → invitar por email.
+
+**Edición local (para desarrolladores):** `npm run dev` levanta el sitio + el panel
+en `http://localhost:4321/admin/index.html` sin login; los cambios se guardan
+directo en los archivos.
 
 ### Opción B — Editar los archivos directo
 

@@ -1,4 +1,5 @@
 {
+  "titulo": "Nuestro año",
   "items": [
     { "valor": "+120", "detalle": "familias acompañadas", "ejemplo": true },
     { "valor": "8", "detalle": "provincias que llegaron", "ejemplo": true },

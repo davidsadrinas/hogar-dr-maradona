@@ -2,6 +2,10 @@
 dist/
 .astro/
 
+# tinacms (el admin se genera en cada build; tina-lock.json SÍ se commitea)
+tina/__generated__/
+public/admin/
+
 # dependencies
 node_modules/
 

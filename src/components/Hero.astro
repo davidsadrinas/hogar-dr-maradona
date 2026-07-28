@@ -1,6 +1,9 @@
 ---
 import Foto from './Foto.astro';
 import fotos from '../data/fotos.json';
+import textos from '../data/textos.json';
+import { emify } from '../lib/emify';
+const t = textos.hero;
 ---
 
 <section class="hero">
@@ -31,22 +34,17 @@ import fotos from '../data/fotos.json';
   <div class="wrap cover">
     <div class="cover-l">
       <div class="issue">
-        <span>Un hogar lejos de casa · para familias del interior</span><b>Desde 2018</b>
+        <span>{t.issue}</span><b>{t.issueDestacado}</b>
       </div>
-      <h1>Que ningún chico enfrente su tratamiento <em>sintiéndose solo.</em></h1>
-      <p class="dek">
-        Cuando una familia del interior tiene que venir a Buenos Aires para que su hijo se
-        trate, todo se vuelve cuesta arriba. Nosotros intentamos darles lo esencial —un
-        lugar donde dormir, un plato de comida— pero sobre todo acompañarlos, para que
-        atraviesen este momento sin sentirse desamparados.
-      </p>
+      <h1 set:html={emify(t.titulo)} />
+      <p class="dek">{t.bajada}</p>
       <div class="hero-cta">
-        <a href="#sostener" class="btn btn-ink">Ayudá a sostener la casa</a>
-        <a href="#empresas" class="btn btn-line">Sumá tu empresa</a>
+        <a href="#sostener" class="btn btn-ink">{t.ctaPrimario}</a>
+        <a href="#empresas" class="btn btn-line">{t.ctaSecundario}</a>
       </div>
     </div>
     <div class="cover-r">
-      <span class="stamp">Casa abierta</span>
+      <span class="stamp">{t.sello}</span>
       <figure class="taped reveal">
         {
           fotos.hero.src ? (

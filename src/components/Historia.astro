@@ -1,6 +1,9 @@
 ---
 import Foto from './Foto.astro';
 import fotos from '../data/fotos.json';
+import textos from '../data/textos.json';
+import { emify } from '../lib/emify';
+const t = textos.historia;
 ---
 
 <section id="historia" class="rule-top">
@@ -16,23 +19,10 @@ import fotos from '../data/fotos.json';
         <figcaption class="cap">{fotos.historia.caption}</figcaption>
       </figure>
       <div class="txt reveal">
-        <span class="lbl">Una historia de la casa</span>
-        <h2>Trece horas de viaje, y la certeza de <em>no estar solos</em>.</h2>
-        <p>
-          Marta llegó desde Formosa con su hija de seis años y un bolso. El tratamiento
-          eran meses en Buenos Aires, y un hotel cerca del hospital costaba más de lo que
-          ella gana en medio año.
-        </p>
-        <p>
-          En el Hogar encontró una cama, sí. Pero lo que más recuerda es la mesa
-          compartida con otras mamás que estaban pasando lo mismo, el cumpleaños que le
-          festejaron a la nena, y no haber tenido que atravesar sola el momento más
-          difícil de su vida. Para eso existe esta casa.
-        </p>
-        <p class="ej">
-          Historia de ejemplo. Las reales las contaremos con permiso de cada familia y
-          cuidando siempre a los chicos.
-        </p>
+        <span class="lbl">{t.etiqueta}</span>
+        <h2 set:html={emify(t.titulo)} />
+        {t.parrafos.map((p) => <p set:html={emify(p)} />)}
+        <p class="ej">{t.aviso}</p>
       </div>
     </div>
   </div>

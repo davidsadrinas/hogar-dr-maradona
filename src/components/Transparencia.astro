@@ -1,23 +1,21 @@
+---
+import textos from '../data/textos.json';
+import { emify } from '../lib/emify';
+const t = textos.transparencia;
+---
+
 <section id="transparencia" class="rule-top">
   <div class="wrap">
-    <div class="kicker"><h2>Poca estructura, <em>cuentas claras</em></h2></div>
+    <div class="kicker"><h2 set:html={emify(t.titulo)} /></div>
     <div class="trust">
-      <div class="titem reveal">
-        <b>Personería jurídica</b>
-        <p>Asociación civil inscripta. Estatuto y autoridades a la vista.</p>
-      </div>
-      <div class="titem reveal">
-        <b>Balances</b>
-        <p>Cada año publicamos memoria y balance aprobados en asamblea.</p>
-      </div>
-      <div class="titem reveal">
-        <b>Rendimos a quien ayuda</b>
-        <p>Cada padrino recibe su informe con fotos cada tres meses.</p>
-      </div>
-      <div class="titem reveal">
-        <b>Certificado ARCA</b>
-        <p>En trámite. Al salir, cualquiera lo verifica por CUIT en la web de ARCA.</p>
-      </div>
+      {
+        t.items.map((item) => (
+          <div class="titem reveal">
+            <b>{item.titulo}</b>
+            <p>{item.texto}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

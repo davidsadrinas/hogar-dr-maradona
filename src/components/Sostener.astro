@@ -1,52 +1,37 @@
+---
+import textos from '../data/textos.json';
+import { emify } from '../lib/emify';
+const t = textos.sostener;
+---
+
 <section id="sostener" class="rule-top">
   <div class="wrap">
     <div class="kicker">
-      <h2>Hoy la casa se sostiene <em>a pulmón</em>. Necesitamos que eso cambie.</h2>
+      <h2 set:html={emify(t.titulo)} />
     </div>
     <div class="sos-grid">
       <div class="reveal">
-        <p class="sos-lead">
-          Seamos honestos: <b
-            >hoy el Hogar se financia con donaciones sueltas y el esfuerzo enorme de un
-            grupo chico de personas.</b
-          > Eso mantiene la casa abierta, pero no alcanza para planificar, y hace que todo
-          dependa de que alguien, cada mes, ponga el hombro.
-        </p>
+        <p class="sos-lead" set:html={emify(t.lead)} />
         <div class="sos-list">
-          <div class="li">
-            <span class="n">1</span>
-            <p>
-              <b>Padrinos que aporten todos los meses.</b> Un ingreso previsible es lo que
-              nos permite dejar de vivir mes a mes.
-            </p>
-          </div>
-          <div class="li">
-            <span class="n">2</span>
-            <p>
-              <b>Empresas que acompañen.</b> Con beneficio fiscal desde el primer aporte
-              (más abajo te contamos cómo).
-            </p>
-          </div>
-          <div class="li">
-            <span class="n">3</span>
-            <p>
-              <b>Aliados que donen en especie o servicios.</b> Comida, insumos, o el
-              trabajo de un contador o un plomero.
-            </p>
-          </div>
+          {
+            t.items.map((item, i) => (
+              <div class="li">
+                <span class="n">{i + 1}</span>
+                <p set:html={emify(item)} />
+              </div>
+            ))
+          }
         </div>
       </div>
       <div class="sos-card reveal">
-        <h3>Hacete padrino de la casa</h3>
+        <h3>{t.card.titulo}</h3>
         <div class="big">
-          $ ____ <span style="font-size:15px;color:#CFC4B2;font-family:'Inter'">/ mes</span>
+          {t.card.monto}
+          <span style="font-size:15px;color:#CFC4B2;font-family:'Inter'">{t.card.periodo}</span>
         </div>
-        <p>
-          Un aporte mensual, por chico que sea, sostenido en el tiempo. Es la forma más
-          concreta de ayudar: convierte tu ayuda en algo con lo que podemos contar.
-        </p>
-        <a href="#donar" class="btn btn-sun">Quiero ser padrino</a>
-        <p class="marg hand">lo previsible es lo que nos deja respirar</p>
+        <p>{t.card.texto}</p>
+        <a href="#donar" class="btn btn-sun">{t.card.boton}</a>
+        <p class="marg hand">{t.card.notaManuscrita}</p>
       </div>
     </div>
   </div>

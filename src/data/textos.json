@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "issue": "Un hogar lejos de casa · para familias del interior",
+    "issueDestacado": "Desde 2018",
+    "titulo": "Que ningún chico enfrente su tratamiento *sintiéndose solo.*",
+    "bajada": "Cuando una familia del interior tiene que venir a Buenos Aires para que su hijo se trate, todo se vuelve cuesta arriba. Nosotros intentamos darles lo esencial —un lugar donde dormir, un plato de comida— pero sobre todo acompañarlos, para que atraviesen este momento sin sentirse desamparados.",
+    "ctaPrimario": "Ayudá a sostener la casa",
+    "ctaSecundario": "Sumá tu empresa",
+    "sello": "Casa abierta"
+  },
+  "nosotros": {
+    "eyebrow": "Quiénes somos",
+    "titulo": "Una casa chica, con una *idea grande*: que nadie esté solo.",
+    "parrafos": [
+      "Somos la Asociación Civil Formoseña Hogar de Tránsito para el Desamparado, una entidad sin fines de lucro. Y somos, hay que decirlo con honestidad, una casa chica que se maneja como lo que es: una familia.",
+      "Muchas familias del interior llegan a Buenos Aires porque sus hijos necesitan tratamientos que no existen en su provincia. Cuando llegan, descubren que quedarse cerca del hospital cuesta una fortuna que no tienen: meses de hotel, comida afuera, una ciudad enorme y desconocida. Ahí tratamos de estar nosotros. No podemos resolverlo todo, pero sí ofrecer lo esencial —un lugar donde dormir, un plato de comida— y, sobre todo, acompañar a la familia entera para que atraviese este momento sin sentirse desamparada.",
+      "Nacimos con raíces formoseñas, y por eso elegimos el nombre de un formoseño por adopción que nos marca el camino: el Dr. Esteban Laureano Maradona."
+    ],
+    "cita": "No tenemos mucha estructura. Tenemos una casa, una mesa larga y la convicción de que ninguna familia debería atravesar esto sola.",
+    "firma": "Vicky y el equipo del Hogar",
+    "cargo": "Presidenta · Asociación Civil Hogar Esteban Maradona",
+    "notaManuscrita": "acompañar a la familia entera, no sólo al que está enfermo ✿"
+  },
+  "maradona": {
+    "eyebrow": "La vara que seguimos",
+    "notaMargen": "el médico que perdió el tren… y se quedó 51 años",
+    "parrafos": [
+      "En noviembre de 1935, un médico santafesino viajaba en tren rumbo a Tucumán para visitar a su hermano. El tren paró en un paraje perdido del monte formoseño, Estanislao del Campo, para cambiar la locomotora. Alguien subió pidiendo a los gritos si había un médico: una mujer llevaba días sin poder dar a luz. Esteban Laureano Maradona bajó, la atendió, y salvó a la madre y a la hija.",
+      "Cuando volvió a la estación, el tren ya se había ido. En el andén lo esperaba un grupo de vecinos, la mayoría indígenas, para pedirle que se quedara: no había ningún médico en kilómetros a la redonda. Se quedó. No un tiempo: **cincuenta y un años**, en una humilde casa de ladrillo sin luz ni agua corriente, atendiendo gratis a las comunidades tobas, pilagás, mocovíes y matacos.",
+      "Los llamaban a él «Doctor Dios» y «el médico de los pobres». Les enseñó a hacer ladrillos y a cultivar, investigó la flora, la fauna y las lenguas del monte, y fundó una colonia para enfermos de lepra. Fue propuesto tres veces al Premio Nobel de la Paz y rechazó todos los honores materiales."
+    ],
+    "cita": "«No quiero recibir el Nobel. Y si me obligaran, donaría todo el dinero para la niñez. Porque, una vez que yo parta, no quiero que quede un solo chico sin saber leer, escribir y sin atención médica.»",
+    "cierre": "Murió en 1995, a semanas de cumplir cien años. El día de su nacimiento, el 4 de julio, es hoy el Día Nacional del Médico Rural. Nosotros tomamos su nombre porque su vida entera cabe en una sola idea, la misma que sostiene esta casa: **cuidar del otro, vivir por el otro.**"
+  },
+  "hacemos": {
+    "titulo": "Lo que intentamos dar, cada vez que *llega una familia*",
+    "cards": [
+      {
+        "tab": "Techo",
+        "titulo": "Un lugar donde dormir",
+        "texto": "Hacemos lo posible para que la familia tenga dónde quedarse cerca del hospital, sin costo, el tiempo que dure el tratamiento.",
+        "nota": "→ para no dormir en la calle ni gastar en hotel"
+      },
+      {
+        "tab": "Mesa",
+        "titulo": "Un plato de comida",
+        "texto": "Comida caliente todos los días, y cuando el tratamiento pide una dieta especial, tratamos de cocinarla.",
+        "nota": "→ la mesa larga, siempre compartida"
+      },
+      {
+        "tab": "Alma",
+        "titulo": "Acompañar a la familia entera",
+        "texto": "Lo más importante: estar. Contener a las mamás, papás y hermanos, y que el nene, entre estudio y estudio, no se sienta desamparado.",
+        "nota": "→ que nadie atraviese esto en soledad"
+      }
+    ]
+  },
+  "historia": {
+    "etiqueta": "Una historia de la casa",
+    "titulo": "Trece horas de viaje, y la certeza de *no estar solos*.",
+    "parrafos": [
+      "Marta llegó desde Formosa con su hija de seis años y un bolso. El tratamiento eran meses en Buenos Aires, y un hotel cerca del hospital costaba más de lo que ella gana en medio año.",
+      "En el Hogar encontró una cama, sí. Pero lo que más recuerda es la mesa compartida con otras mamás que estaban pasando lo mismo, el cumpleaños que le festejaron a la nena, y no haber tenido que atravesar sola el momento más difícil de su vida. Para eso existe esta casa."
+    ],
+    "aviso": "Historia de ejemplo. Las reales las contaremos con permiso de cada familia y cuidando siempre a los chicos."
+  },
+  "sostener": {
+    "titulo": "Hoy la casa se sostiene *a pulmón*. Necesitamos que eso cambie.",
+    "lead": "Seamos honestos: **hoy el Hogar se financia con donaciones sueltas y el esfuerzo enorme de un grupo chico de personas.** Eso mantiene la casa abierta, pero no alcanza para planificar, y hace que todo dependa de que alguien, cada mes, ponga el hombro.",
+    "items": [
+      "**Padrinos que aporten todos los meses.** Un ingreso previsible es lo que nos permite dejar de vivir mes a mes.",
+      "**Empresas que acompañen.** Con beneficio fiscal desde el primer aporte (más abajo te contamos cómo).",
+      "**Aliados que donen en especie o servicios.** Comida, insumos, o el trabajo de un contador o un plomero."
+    ],
+    "card": {
+      "titulo": "Hacete padrino de la casa",
+      "monto": "$ ____",
+      "periodo": "/ mes",
+      "texto": "Un aporte mensual, por chico que sea, sostenido en el tiempo. Es la forma más concreta de ayudar: convierte tu ayuda en algo con lo que podemos contar.",
+      "boton": "Quiero ser padrino",
+      "notaManuscrita": "lo previsible es lo que nos deja respirar"
+    }
+  },
+  "empresas": {
+    "eyebrow": "Tu empresa puede ayudar",
+    "titulo": "Acompañar hoy, *con beneficio fiscal* desde el primer aporte.",
+    "lead": "Elegí la vía que mejor le sirve a tu empresa. El auspicio se deduce como gasto de publicidad —al 100%, sin tope— y no depende de ningún trámite pendiente.",
+    "fiscal": [
+      {
+        "tag": "HOY",
+        "titulo": "Auspicio / sponsoreo",
+        "texto": "Deducible al 100% como gasto de publicidad. Sin tope. A cambio, tu marca acompaña a la casa."
+      },
+      {
+        "tag": "PRONTO",
+        "titulo": "Donación",
+        "texto": "Deducible hasta el 5% de la ganancia neta cuando tengamos el certificado de ARCA, hoy en trámite."
+      },
+      {
+        "tag": "HOY",
+        "titulo": "En especie",
+        "texto": "Alimentos, insumos y equipamiento. Los recibimos ahora, con acta y valuación."
+      }
+    ],
+    "notaGrandes": "**¿Sos una empresa grande?** Además del auspicio, se puede colaborar con voluntariado, colectas entre empleados y donación de producto. Escribinos y lo armamos juntos."
+  },
+  "album": {
+    "titulo": "La casa *por dentro*",
+    "notaMargen": "pronto, fotos de verdad"
+  },
+  "eventos": {
+    "titulo": "Novedades"
+  },
+  "transparencia": {
+    "titulo": "Poca estructura, *cuentas claras*",
+    "items": [
+      {
+        "titulo": "Personería jurídica",
+        "texto": "Asociación civil inscripta. Estatuto y autoridades a la vista."
+      },
+      {
+        "titulo": "Balances",
+        "texto": "Cada año publicamos memoria y balance aprobados en asamblea."
+      },
+      {
+        "titulo": "Rendimos a quien ayuda",
+        "texto": "Cada padrino recibe su informe con fotos cada tres meses."
+      },
+      {
+        "titulo": "Certificado ARCA",
+        "texto": "En trámite. Al salir, cualquiera lo verifica por CUIT en la web de ARCA."
+      }
+    ]
+  },
+  "donar": {
+    "eyebrow": "Quiero ayudar",
+    "titulo": "Cada aporte se convierte en *una familia acompañada*.",
+    "lead": "Personas y empresas, una vez o —ojalá— todos los meses. Toda ayuda entra a la cuenta de la asociación, nunca a la de una persona. Lo que más nos sirve es el aporte mensual: es lo que nos deja planificar.",
+    "agradecimiento": "gracias por acercarte hasta acá ✿",
+    "aliasLabel": "Transferí al alias",
+    "tip": "Toda ayuda entra a la cuenta de la asociación, nunca a la de una persona. Si querés ser **padrino mensual**, escribinos y coordinamos.",
+    "gracias": "¡gracias, en serio!"
+  }
+}

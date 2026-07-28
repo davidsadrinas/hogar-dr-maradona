@@ -1,0 +1,54 @@
+---
+import site from '../data/site.json';
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <span class="h">{site.nombre}</span>
+        <p>
+          {site.nombreLegal}. Acompañamos a niños en tratamiento médico y a sus
+          familias, del interior del país.
+        </p>
+      </div>
+      <div>
+        <h4>La casa</h4>
+        <ul>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#sostener">Sostener la casa</a></li>
+          <li><a href="#empresas">Empresas</a></li>
+          <li><a href="#transparencia">Transparencia</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Encontranos</h4>
+        <ul>
+          <li>{site.direccion}</li>
+          <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+          <li>
+            <a href={`https://wa.me/${site.whatsapp}`} target="_blank" rel="noopener">
+              WhatsApp: {site.whatsappDisplay}
+            </a>
+          </li>
+          {
+            site.instagram ? (
+              <li>
+                <a href={site.instagram} target="_blank" rel="noopener">
+                  Instagram
+                </a>
+              </li>
+            ) : (
+              <li>Instagram · pronto</li>
+            )
+          }
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© {year} {site.nombre}</span>
+      <span>Hecho a pulmón, y con mucha esperanza.</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,29 @@
+---
+const fotos = [
+  { caption: 'el patio' },
+  { caption: 'la cocina' },
+  { caption: 'una pieza' },
+  { caption: 'la mesa larga' },
+];
+---
+
+<section id="album" class="rule-top">
+  <div class="wrap">
+    <div class="kicker">
+      <h2>La casa <em>por dentro</em></h2>
+      <span class="marg" style="transform:rotate(-2deg)">pronto, fotos de verdad</span>
+    </div>
+    <div class="album">
+      {
+        fotos.map((f) => (
+          <figure class="taped reveal">
+            <div class="ph" style="aspect-ratio:1">
+              <span>foto</span>
+            </div>
+            <figcaption class="cap">{f.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hogar Esteban Maradona — Un hogar lejos de casa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF3E2;          /* warm dawn paper */
+    --paper-2:#F6EAD2;
+    --card:#FFFBF1;
+    --ink:#33291F;
+    --ink-soft:#6A5C4C;
+    --sun:#F0A93B;            /* dawn sun — hope */
+    --sun-deep:#D98324;
+    --sun-soft:#FBE0AE;
+    --sky:#7FA6A0;            /* soft dawn sky-green, quiet secondary */
+    --sky-tint:#DDE7E0;
+    --line:rgba(51,41,31,.15);
+    --line-2:rgba(51,41,31,.3);
+    --tape:rgba(240,169,59,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(120% 80% at 78% -8%, rgba(240,169,59,.28), rgba(240,169,59,0) 55%),
+      radial-gradient(90% 60% at 12% 0%, rgba(255,240,205,.5), rgba(255,240,205,0) 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-repeat:no-repeat,no-repeat,repeat;
+    background-attachment:fixed,fixed,scroll;
+    color:var(--ink);font-family:'Inter',sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Newsreader',serif;font-weight:500;line-height:1.06}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 30px}
+  .serif{font-family:'Newsreader',serif}.hand{font-family:'Caveat',cursive}
+  .eyebrow{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--sun-deep)}
+  .marg{font-family:'Caveat',cursive;font-size:21px;color:var(--sky);line-height:1.25;transform:rotate(-3deg)}
+
+  .stamp{display:inline-block;font-family:'Inter';font-weight:700;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--sun-deep);border:2.5px solid var(--sun-deep);border-radius:6px;
+    padding:7px 13px;transform:rotate(-5deg);opacity:.92}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter';font-weight:600;font-size:14.5px;
+    padding:12px 22px;border-radius:2px;transition:transform .14s,box-shadow .2s,background .2s;cursor:pointer}
+  .btn-ink{background:var(--ink);color:var(--paper);box-shadow:3px 3px 0 rgba(51,41,31,.2)}
+  .btn-ink:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 rgba(51,41,31,.2)}
+  .btn-sun{background:var(--sun);color:#3a2708;box-shadow:3px 3px 0 rgba(217,131,36,.4)}
+  .btn-sun:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 rgba(217,131,36,.4)}
+  .btn-line{border:1.5px solid var(--line-2);color:var(--ink)}
+  .btn-line:hover{background:var(--card)}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(251,243,226,.9);backdrop-filter:blur(8px);border-bottom:1.5px solid var(--ink)}
+  .nav{display:flex;align-items:center;gap:26px;height:66px}
+  .brand{margin-right:auto;display:flex;flex-direction:column;line-height:1}
+  .brand .h{font-family:'Caveat';font-size:27px;font-weight:700;color:var(--ink)}
+  .brand .s{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:1px}
+  .menu{display:flex;gap:22px;font-size:14px;font-weight:500}
+  .menu a{color:var(--ink-soft);padding-bottom:2px;border-bottom:1.5px solid transparent;transition:.2s}
+  .menu a:hover{color:var(--ink);border-color:var(--sun)}
+  .sun-mark{width:30px;height:30px;flex:none}
+
+  /* HERO */
+  .hero{padding:60px 0 34px;position:relative}
+  .cover{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:start}
+  .cover-l{padding-top:12px}
+  .issue{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1.5px solid var(--ink);padding-bottom:12px;margin-bottom:26px}
+  .issue b{color:var(--sun-deep)}
+  .hero h1{font-size:clamp(38px,6.1vw,70px);letter-spacing:-.02em;font-weight:400}
+  .hero h1 em{font-style:italic;color:var(--sun-deep)}
+  .hero .dek{font-family:'Newsreader';font-size:20px;line-height:1.5;color:var(--ink-soft);margin-top:24px;max-width:31em}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;align-items:center}
+  .taped{position:relative;background:var(--card);padding:12px 12px 46px;box-shadow:2px 6px 18px rgba(51,41,31,.14);transform:rotate(2.2deg);border:1px solid rgba(51,41,31,.07)}
+  .taped::before,.taped::after{content:"";position:absolute;width:88px;height:26px;background:var(--tape);top:-12px;box-shadow:0 1px 3px rgba(51,41,31,.1)}
+  .taped::before{left:16px;transform:rotate(-7deg)}
+  .taped::after{right:16px;transform:rotate(6deg)}
+  .taped .cap{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:'Caveat';font-size:20px;color:var(--ink-soft)}
+  .ph{background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(51,41,31,.045) 14px 15px),var(--sky-tint);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:var(--sky);text-align:center;padding:18px}
+  .ph svg{opacity:.6}.ph span{font-family:'Caveat';font-size:18px}
+  .cover-r{position:relative}
+  .cover-r .stamp{position:absolute;left:-30px;top:-14px;z-index:3;background:var(--card)}
+  .rays{position:absolute;right:-40px;top:-70px;width:280px;height:280px;pointer-events:none;opacity:.5;z-index:-1}
+
+  section{padding:70px 0;position:relative}
+  .rule-top{border-top:1.5px solid var(--ink)}
+  .kicker{display:flex;align-items:baseline;gap:14px;margin-bottom:30px;flex-wrap:wrap}
+  .kicker h2{font-size:clamp(28px,4vw,44px);font-weight:400;letter-spacing:-.02em}
+  .kicker h2 em{font-style:italic;color:var(--sun-deep)}
+
+  /* NOSOTROS */
+  .cronica{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+  .cronica .body p{font-family:'Newsreader';font-size:17.5px;line-height:1.62;margin-bottom:14px;color:#40372c}
+  .cronica .body p:first-of-type::first-letter{font-family:'Newsreader';font-size:62px;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--sun-deep);font-weight:500}
+  .pull{font-family:'Newsreader';font-style:italic;font-size:23px;line-height:1.4;color:var(--ink);border-left:3px solid var(--sun);padding:4px 0 4px 20px;margin:22px 0}
+  .signoff{margin-top:22px}
+  .signoff .sig{font-family:'Caveat';font-size:32px;color:var(--ink);transform:rotate(-4deg);display:inline-block}
+  .signoff .who{font-size:13px;color:var(--ink-soft);margin-top:2px}
+  .aside .taped{transform:rotate(-2.2deg)}
+  .aside .note{font-family:'Caveat';font-size:22px;color:var(--sky);margin-top:26px;transform:rotate(-1.5deg);line-height:1.3}
+
+  /* HACEMOS */
+  .idx{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:8px}
+  .icard{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:26px 24px 24px;
+    box-shadow:2px 4px 14px rgba(51,41,31,.09);position:relative;
+    background-image:linear-gradient(var(--sky-tint) 1px,transparent 1px);background-size:100% 30px;background-position:0 58px}
+  .icard:nth-child(1){transform:rotate(-1.3deg)}.icard:nth-child(2){transform:rotate(.7deg)}.icard:nth-child(3){transform:rotate(-.6deg)}
+  .icard .tab{position:absolute;top:-11px;right:20px;background:var(--sun);color:#3a2708;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:2px}
+  .icard h3{font-size:24px;font-weight:500;margin-bottom:9px}
+  .icard p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+  .icard .chk{font-family:'Caveat';font-size:19px;color:var(--sky);margin-top:14px}
+
+  /* STATS ledger */
+  .ledger{background:var(--ink);color:var(--paper);border-radius:4px;padding:40px 34px;position:relative;overflow:hidden}
+  .ledger::before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(240,169,59,.4),transparent 70%)}
+  .ledger .stamp{position:absolute;right:26px;top:-16px;background:var(--paper);color:var(--sun-deep);border-color:var(--sun-deep)}
+  .ledrow{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;position:relative}
+  .led b{font-family:'Newsreader';font-size:clamp(36px,5.2vw,56px);font-weight:500;display:block;letter-spacing:-.02em}
+  .led b i{font-style:normal;color:var(--sun);font-size:.5em;vertical-align:super}
+  .led span{font-size:13.5px;color:#CFC4B2;display:block;margin-top:2px}
+  .ledger .foot{font-family:'Caveat';font-size:18px;color:#B6AC98;margin-top:24px;position:relative}
+
+  /* HISTORIA */
+  .spread{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+  .spread .taped{transform:rotate(-2deg)}
+  .spread .txt .lbl{font-family:'Caveat';font-size:22px;color:var(--sun-deep)}
+  .spread .txt h2{font-size:clamp(28px,3.6vw,40px);font-weight:400;margin:6px 0 16px;letter-spacing:-.01em}
+  .spread .txt h2 em{font-style:italic}
+  .spread .txt p{font-family:'Newsreader';font-size:17.5px;line-height:1.62;color:#40372c;margin-bottom:13px}
+  .spread .txt .ej{font-size:12px;color:var(--ink-soft);font-style:italic;margin-top:6px}
+
+  /* FINANCIACION — the urgent ask */
+  #sostener{background:var(--ink);color:var(--paper)}
+  #sostener .kicker h2{color:var(--paper)}
+  #sostener .kicker h2 em{color:var(--sun)}
+  .sos-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
+  .sos-lead{font-family:'Newsreader';font-size:19px;line-height:1.55;color:#E9DFCC}
+  .sos-lead b{color:#fff}
+  .sos-list{margin-top:22px;display:flex;flex-direction:column;gap:14px}
+  .sos-list .li{display:flex;gap:13px;align-items:flex-start}
+  .sos-list .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--sun);color:#3a2708;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .sos-list p{font-size:15px;color:#E4DAC7}
+  .sos-list b{color:#fff}
+  .sos-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:6px;padding:30px}
+  .sos-card h3{font-size:24px;color:#fff;font-weight:500;margin-bottom:6px}
+  .sos-card .big{font-family:'Newsreader';font-size:40px;color:var(--sun);font-weight:500}
+  .sos-card p{font-size:14px;color:#CFC4B2;margin-top:6px;margin-bottom:18px}
+  .sos-card .marg{color:var(--sun-soft);margin-top:16px;transform:rotate(-2deg)}
+
+  /* EMPRESAS */
+  #empresas{background:var(--paper-2)}
+  .emp-top{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:end;margin-bottom:14px}
+  .emp-top .lead{font-family:'Newsreader';font-size:18px;line-height:1.55;color:#40372c;margin-top:12px;max-width:32em}
+  .fiscal{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:8px 22px;box-shadow:2px 4px 14px rgba(51,41,31,.09)}
+  .frow{display:flex;gap:13px;padding:15px 0;border-bottom:1px dashed var(--line);align-items:flex-start}
+  .frow:last-child{border-bottom:0}
+  .ftag{flex:none;font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:4px 9px;border-radius:2px;margin-top:2px}
+  .ftag.now{background:var(--sky-tint);color:#4f6a5f}
+  .ftag.soon{background:var(--sun-soft);color:var(--sun-deep)}
+  .frow b{font-size:14.5px}.frow p{font-size:13px;color:var(--ink-soft);margin-top:2px}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+  .tier{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:28px 26px;box-shadow:2px 4px 14px rgba(51,41,31,.09);display:flex;flex-direction:column;position:relative}
+  .tier.feat{border:2px solid var(--sun-deep)}
+  .tier .fl{position:absolute;top:-13px;left:22px}
+  .tier .n{font-family:'Caveat';font-size:20px;color:var(--sun-deep)}
+  .tier h3{font-size:24px;font-weight:500;margin:2px 0 4px}
+  .tier .amt{font-family:'Newsreader';font-size:30px;font-weight:500;margin:10px 0 0}
+  .tier .amt small{font-family:'Inter';font-size:13px;color:var(--ink-soft);font-weight:400}
+  .tier ul{list-style:none;margin:18px 0 22px;display:flex;flex-direction:column;gap:9px}
+  .tier li{font-size:13.5px;color:#453b30;display:flex;gap:9px}
+  .tier li::before{content:"✓";color:var(--sky);font-weight:700}
+  .tier .btn{margin-top:auto;justify-content:center}
+  .emp-note{margin-top:26px;background:var(--card);border-left:3px solid var(--sky);padding:14px 18px;font-size:13.5px;color:#453b30}
+
+  /* ALBUM */
+  .album{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 20px;margin-top:14px}
+  .album .taped{transform:rotate(-2deg)}
+  .album .taped:nth-child(2n){transform:rotate(1.8deg)}
+  .album .taped:nth-child(3n){transform:rotate(-1deg)}
+  .album .ph{min-height:120px}
+
+  /* EVENTOS */
+  .clips{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:8px}
+  .clip{background:var(--card);border:1px solid var(--line);box-shadow:2px 4px 14px rgba(51,41,31,.09)}
+  .clip .ph{min-height:150px;border-bottom:1px solid var(--line)}
+  .clip .b{padding:20px 22px 24px}
+  .clip .d{font-family:'Caveat';font-size:19px;color:var(--sun-deep)}
+  .clip h3{font-size:21px;font-weight:500;margin:2px 0 8px}
+  .clip p{font-size:14px;color:var(--ink-soft)}
+
+  /* TRANSPARENCIA */
+  #transparencia{background:var(--paper-2)}
+  .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:8px}
+  .titem{border-top:2px solid var(--ink);padding-top:14px}
+  .titem b{font-family:'Newsreader';font-size:17px;font-weight:500;display:block;margin-bottom:5px}
+  .titem p{font-size:13px;color:var(--ink-soft)}
+
+  /* DONAR */
+  #donar{padding:76px 0}
+  .donar{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
+  .donar h2{font-size:clamp(30px,4vw,46px);font-weight:400;letter-spacing:-.02em}
+  .donar h2 em{font-style:italic;color:var(--sun-deep)}
+  .donar .lead{font-family:'Newsreader';font-size:18px;color:#40372c;margin-top:14px;max-width:30em}
+  .donar .marg{margin-top:20px}
+  .note-card{background:var(--card);padding:30px 30px 34px;box-shadow:2px 6px 20px rgba(51,41,31,.14);position:relative;transform:rotate(-1.1deg);border:1px solid rgba(51,41,31,.07)}
+  .note-card::before{content:"";position:absolute;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#FBD37E,var(--sun-deep));top:-15px;left:50%;transform:translateX(-50%);box-shadow:0 2px 5px rgba(51,41,31,.25)}
+  .note-card .line{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+  .note-card .line:last-of-type{border-bottom:0}
+  .note-card .line span{color:var(--ink-soft)}.note-card .line b{font-weight:600}
+  .note-card .gr{font-family:'Caveat';font-size:26px;color:var(--sun-deep);text-align:center;margin-top:18px;transform:rotate(-2deg)}
+  .alias-hero{background:var(--sun-soft);border:1.5px dashed var(--sun-deep);border-radius:6px;padding:16px 18px;margin-bottom:6px}
+  .alias-lbl{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sun-deep)}
+  .alias-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px}
+  .alias-row b{font-family:'Newsreader';font-size:26px;font-weight:600;letter-spacing:.01em;color:var(--ink)}
+  .copy{flex:none;font-family:'Inter';font-weight:600;font-size:12.5px;color:#3a2708;background:var(--sun);border:0;border-radius:3px;padding:8px 14px;cursor:pointer;transition:background .2s,transform .12s}
+  .copy:hover{background:var(--sun-deep);transform:translateY(-1px)}
+  .copy.ok{background:var(--sky)}
+  .note-card .tip{font-size:12.5px;color:var(--ink-soft);margin-top:14px;line-height:1.5}
+
+  footer{background:var(--ink);color:#C9BEAC;padding:52px 0 28px}
+  .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px}
+  footer .h{font-family:'Caveat';font-size:26px;color:var(--paper)}
+  footer p{font-size:13.5px;margin-top:12px;max-width:28em}
+  footer h4{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#948a76;margin-bottom:13px}
+  footer li{list-style:none;font-size:13.5px;margin-bottom:8px}
+  footer a:hover{color:#fff}
+  .fbot{margin-top:42px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:#948a76;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .cover,.cronica,.spread,.emp-top,.donar,.fgrid,.sos-grid{grid-template-columns:1fr;gap:34px}
+    .idx,.tiers,.clips{grid-template-columns:1fr}
+    .ledrow,.trust{grid-template-columns:1fr 1fr;gap:20px}
+    .album{grid-template-columns:1fr 1fr}
+    .menu{display:none}
+    .cover-r .stamp{position:static;display:inline-block;margin-bottom:14px}
+    .rays{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:80;display:flex;align-items:center;
+    background:#25D366;color:#fff;border-radius:999px;height:56px;width:56px;overflow:hidden;
+    box-shadow:0 6px 20px rgba(37,211,102,.4),0 2px 6px rgba(0,0,0,.2);transition:width .3s ease}
+  .wa-float svg{flex:none;width:56px;height:56px;padding:15px}
+  .wa-float .wa-txt{white-space:nowrap;font-family:'Inter';font-weight:600;font-size:14.5px;opacity:0;transition:opacity .2s ease .05s}
+  .wa-float:hover{width:222px}
+  .wa-float:hover .wa-txt{opacity:1;padding-right:22px}
+  @media(max-width:600px){.wa-float:hover{width:56px}.wa-float:hover .wa-txt{opacity:0;padding-right:0}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="h">Hogar Esteban Maradona</span>
+      <span class="s">Un hogar lejos de casa · Buenos Aires</span>
+    </a>
+    <nav class="menu">
+      <a href="#nosotros">Quiénes somos</a>
+      <a href="#maradona">Dr. Maradona</a>
+      <a href="#hacemos">Qué hacemos</a>
+      <a href="#sostener">Sostener la casa</a>
+      <a href="#empresas">Empresas</a>
+    </nav>
+    <a href="#donar" class="btn btn-sun">Ayudar</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="rays" viewBox="0 0 200 200" aria-hidden="true"><g stroke="#F0A93B" stroke-width="2" stroke-linecap="round"><circle cx="100" cy="100" r="30" fill="#F0A93B" opacity=".5"/><g opacity=".55"><line x1="100" y1="20" x2="100" y2="48"/><line x1="100" y1="152" x2="100" y2="180"/><line x1="20" y1="100" x2="48" y2="100"/><line x1="152" y1="100" x2="180" y2="100"/><line x1="43" y1="43" x2="63" y2="63"/><line x1="137" y1="137" x2="157" y2="157"/><line x1="157" y1="43" x2="137" y2="63"/><line x1="63" y1="137" x2="43" y2="157"/></g></g></svg>
+  <div class="wrap cover">
+    <div class="cover-l">
+      <div class="issue"><span>Un hogar lejos de casa · para familias del interior</span><b>Desde 2018</b></div>
+      <h1>Que ningún chico enfrente su tratamiento <em>sintiéndose solo.</em></h1>
+      <p class="dek">Cuando una familia del interior tiene que venir a Buenos Aires para que su hijo se trate, todo se vuelve cuesta arriba. Nosotros intentamos darles lo esencial —un lugar donde dormir, un plato de comida— pero sobre todo acompañarlos, para que atraviesen este momento sin sentirse desamparados.</p>
+      <div class="hero-cta">
+        <a href="#sostener" class="btn btn-ink">Ayudá a sostener la casa</a>
+        <a href="#empresas" class="btn btn-line">Sumá tu empresa</a>
+      </div>
+    </div>
+    <div class="cover-r">
+      <span class="stamp">Casa abierta</span>
+      <figure class="taped reveal">
+        <div class="ph" style="aspect-ratio:4/5"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg><span>la foto de la casa va acá</span></div>
+        <figcaption class="cap">nuestra casa, en Av. Córdoba 6500</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="rule-top">
+  <div class="wrap">
+    <div class="kicker"><span class="eyebrow">Quiénes somos</span></div>
+    <div class="cronica">
+      <div class="body reveal">
+        <h2 style="font-size:34px;margin-bottom:16px">Una casa chica, con una <em style="font-style:italic;color:var(--sun-deep)">idea grande</em>: que nadie esté solo.</h2>
+        <p>Somos la Asociación Civil Formoseña Hogar de Tránsito para el Desamparado, una entidad sin fines de lucro. Y somos, hay que decirlo con honestidad, una casa chica que se maneja como lo que es: una familia.</p>
+        <p>Muchas familias del interior llegan a Buenos Aires porque sus hijos necesitan tratamientos que no existen en su provincia. Cuando llegan, descubren que quedarse cerca del hospital cuesta una fortuna que no tienen: meses de hotel, comida afuera, una ciudad enorme y desconocida. Ahí tratamos de estar nosotros. No podemos resolverlo todo, pero sí ofrecer lo esencial —un lugar donde dormir, un plato de comida— y, sobre todo, acompañar a la familia entera para que atraviese este momento sin sentirse desamparada.</p>
+        <p>Nacimos con raíces formoseñas, y por eso elegimos el nombre de un formoseño por adopción que nos marca el camino: el Dr. Esteban Laureano Maradona.</p>
+        <p class="pull">No tenemos mucha estructura. Tenemos una casa, una mesa larga y la convicción de que ninguna familia debería atravesar esto sola.</p>
+        <div class="signoff">
+          <div class="sig">Vicky y el equipo del Hogar</div>
+          <div class="who">Presidenta · Asociación Civil Hogar Esteban Maradona</div>
+        </div>
+      </div>
+      <div class="aside reveal">
+        <figure class="taped">
+          <div class="ph" style="aspect-ratio:5/4"><span>una foto de la cocina, la mesa, el patio…</span></div>
+          <figcaption class="cap">la mesa donde comemos todos</figcaption>
+        </figure>
+        <p class="note">acompañar a la familia entera, no sólo al que está enfermo ✿</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DR MARADONA -->
+<section id="maradona" class="rule-top">
+  <div class="wrap">
+    <div class="kicker">
+      <span class="eyebrow">La vara que seguimos</span>
+      <span class="marg" style="transform:rotate(-2deg)">el médico que perdió el tren… y se quedó 51 años</span>
+    </div>
+    <div class="spread" style="grid-template-columns:.85fr 1.15fr">
+      <div class="aside reveal">
+        <figure class="taped" style="transform:rotate(-2deg)">
+          <div class="ph" style="aspect-ratio:4/5"><span>retrato del Dr. Maradona</span></div>
+          <figcaption class="cap">Dr. Esteban Laureano Maradona (1895–1995)</figcaption>
+        </figure>
+      </div>
+      <div class="body reveal">
+        <p>En noviembre de 1935, un médico santafesino viajaba en tren rumbo a Tucumán para visitar a su hermano. El tren paró en un paraje perdido del monte formoseño, Estanislao del Campo, para cambiar la locomotora. Alguien subió pidiendo a los gritos si había un médico: una mujer llevaba días sin poder dar a luz. Esteban Laureano Maradona bajó, la atendió, y salvó a la madre y a la hija.</p>
+        <p>Cuando volvió a la estación, el tren ya se había ido. En el andén lo esperaba un grupo de vecinos, la mayoría indígenas, para pedirle que se quedara: no había ningún médico en kilómetros a la redonda. Se quedó. No un tiempo: <b>cincuenta y un años</b>, en una humilde casa de ladrillo sin luz ni agua corriente, atendiendo gratis a las comunidades tobas, pilagás, mocovíes y matacos.</p>
+        <p>Los llamaban a él «Doctor Dios» y «el médico de los pobres». Les enseñó a hacer ladrillos y a cultivar, investigó la flora, la fauna y las lenguas del monte, y fundó una colonia para enfermos de lepra. Fue propuesto tres veces al Premio Nobel de la Paz y rechazó todos los honores materiales.</p>
+        <p class="pull" style="border-color:var(--sun);font-size:22px">«No quiero recibir el Nobel. Y si me obligaran, donaría todo el dinero para la niñez. Porque, una vez que yo parta, no quiero que quede un solo chico sin saber leer, escribir y sin atención médica.»</p>
+        <p>Murió en 1995, a semanas de cumplir cien años. El día de su nacimiento, el 4 de julio, es hoy el Día Nacional del Médico Rural. Nosotros tomamos su nombre porque su vida entera cabe en una sola idea, la misma que sostiene esta casa: <b>cuidar del otro, vivir por el otro.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HACEMOS -->
+<section id="hacemos" class="rule-top">
+  <div class="wrap">
+    <div class="kicker"><h2>Lo que intentamos dar, cada vez que <em>llega una familia</em></h2></div>
+    <div class="idx">
+      <div class="icard reveal"><span class="tab">Techo</span><h3>Un lugar donde dormir</h3><p>Hacemos lo posible para que la familia tenga dónde quedarse cerca del hospital, sin costo, el tiempo que dure el tratamiento.</p><div class="chk">→ para no dormir en la calle ni gastar en hotel</div></div>
+      <div class="icard reveal"><span class="tab">Mesa</span><h3>Un plato de comida</h3><p>Comida caliente todos los días, y cuando el tratamiento pide una dieta especial, tratamos de cocinarla.</p><div class="chk">→ la mesa larga, siempre compartida</div></div>
+      <div class="icard reveal"><span class="tab">Alma</span><h3>Acompañar a la familia entera</h3><p>Lo más importante: estar. Contener a las mamás, papás y hermanos, y que el nene, entre estudio y estudio, no se sienta desamparado.</p><div class="chk">→ que nadie atraviese esto en soledad</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="rule-top">
+  <div class="wrap">
+    <div class="ledger reveal">
+      <span class="stamp">Nuestro año</span>
+      <div class="ledrow">
+        <div class="led"><b>+120<i>*</i></b><span>familias acompañadas</span></div>
+        <div class="led"><b>8<i>*</i></b><span>provincias que llegaron</span></div>
+        <div class="led"><b>$0</b><span>les costó a ellas</span></div>
+        <div class="led"><b>100%<i>*</i></b><span>a pulmón, de la comunidad</span></div>
+      </div>
+      <p class="foot">* números de ejemplo — los cambiamos por los reales apenas los tengamos</p>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA -->
+<section id="historia" class="rule-top">
+  <div class="wrap">
+    <div class="spread">
+      <figure class="taped reveal">
+        <div class="ph" style="aspect-ratio:4/5"><span>foto de la historia (con permiso)</span></div>
+        <figcaption class="cap">Marta y su nena, antes de volver a casa</figcaption>
+      </figure>
+      <div class="txt reveal">
+        <span class="lbl">Una historia de la casa</span>
+        <h2>Trece horas de viaje, y la certeza de <em>no estar solos</em>.</h2>
+        <p>Marta llegó desde Formosa con su hija de seis años y un bolso. El tratamiento eran meses en Buenos Aires, y un hotel cerca del hospital costaba más de lo que ella gana en medio año.</p>
+        <p>En el Hogar encontró una cama, sí. Pero lo que más recuerda es la mesa compartida con otras mamás que estaban pasando lo mismo, el cumpleaños que le festejaron a la nena, y no haber tenido que atravesar sola el momento más difícil de su vida. Para eso existe esta casa.</p>
+        <p class="ej">Historia de ejemplo. Las reales las contaremos con permiso de cada familia y cuidando siempre a los chicos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOSTENER — the honest, urgent ask -->
+<section id="sostener" class="rule-top">
+  <div class="wrap">
+    <div class="kicker"><h2>Hoy la casa se sostiene <em>a pulmón</em>. Necesitamos que eso cambie.</h2></div>
+    <div class="sos-grid">
+      <div class="reveal">
+        <p class="sos-lead">Seamos honestos: <b>hoy el Hogar se financia con donaciones sueltas y el esfuerzo enorme de un grupo chico de personas.</b> Eso mantiene la casa abierta, pero no alcanza para planificar, y hace que todo dependa de que alguien, cada mes, ponga el hombro.</p>
+        <div class="sos-list">
+          <div class="li"><span class="n">1</span><p><b>Padrinos que aporten todos los meses.</b> Un ingreso previsible es lo que nos permite dejar de vivir mes a mes.</p></div>
+          <div class="li"><span class="n">2</span><p><b>Empresas que acompañen.</b> Con beneficio fiscal desde el primer aporte (más abajo te contamos cómo).</p></div>
+          <div class="li"><span class="n">3</span><p><b>Aliados que donen en especie o servicios.</b> Comida, insumos, o el trabajo de un contador o un plomero.</p></div>
+        </div>
+      </div>
+      <div class="sos-card reveal">
+        <h3>Hacete padrino de la casa</h3>
+        <div class="big">$ ____ <span style="font-size:15px;color:#CFC4B2;font-family:'Inter'">/ mes</span></div>
+        <p>Un aporte mensual, por chico que sea, sostenido en el tiempo. Es la forma más concreta de ayudar: convierte tu ayuda en algo con lo que podemos contar.</p>
+        <a href="#donar" class="btn btn-sun">Quiero ser padrino</a>
+        <p class="marg hand">lo previsible es lo que nos deja respirar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPRESAS -->
+<section id="empresas" class="rule-top">
+  <div class="wrap">
+    <div class="emp-top">
+      <div class="reveal">
+        <span class="eyebrow">Tu empresa puede ayudar</span>
+        <h2 class="serif" style="font-size:clamp(28px,3.8vw,42px);font-weight:400;margin-top:10px;letter-spacing:-.02em">Acompañar hoy, <em style="font-style:italic;color:var(--sun-deep)">con beneficio fiscal</em> desde el primer aporte.</h2>
+        <p class="lead">Elegí la vía que mejor le sirve a tu empresa. El auspicio se deduce como gasto de publicidad —al 100%, sin tope— y no depende de ningún trámite pendiente.</p>
+      </div>
+      <div class="fiscal reveal">
+        <div class="frow"><span class="ftag now">HOY</span><div><b>Auspicio / sponsoreo</b><p>Deducible al 100% como gasto de publicidad. Sin tope. A cambio, tu marca acompaña a la casa.</p></div></div>
+        <div class="frow"><span class="ftag soon">PRONTO</span><div><b>Donación</b><p>Deducible hasta el 5% de la ganancia neta cuando tengamos el certificado de ARCA, hoy en trámite.</p></div></div>
+        <div class="frow"><span class="ftag now">HOY</span><div><b>En especie</b><p>Alimentos, insumos y equipamiento. Los recibimos ahora, con acta y valuación.</p></div></div>
+      </div>
+    </div>
+    <div class="tiers">
+      <div class="tier reveal">
+        <span class="n">Acompaña un mes</span>
+        <h3>Colaborador</h3>
+        <div class="amt">$ ____ <small>/ mes</small></div>
+        <ul><li>Tu logo en la sección Empresas</li><li>Mención en la memoria anual</li><li>Comprobante deducible al 100%</li></ul>
+        <a href="#donar" class="btn btn-line">Quiero sumarme</a>
+      </div>
+      <div class="tier feat reveal">
+        <span class="fl stamp">El que más sostiene</span>
+        <span class="n">Apadrina una habitación</span>
+        <h3>Padrino de habitación</h3>
+        <div class="amt">$ ____ <small>/ mes</small></div>
+        <ul><li>Placa con tu nombre en la puerta</li><li>Informe con fotos cada tres meses</li><li>Logo en la casa y en el newsletter</li><li>Comprobante deducible al 100%</li></ul>
+        <a href="#donar" class="btn btn-sun">Apadrinar una pieza</a>
+      </div>
+      <div class="tier reveal">
+        <span class="n">Sostiene un programa</span>
+        <h3>Socio principal</h3>
+        <div class="amt">A convenir</div>
+        <ul><li>Todo lo anterior</li><li>Presencia en el evento anual</li><li>Comunicación en conjunto</li></ul>
+        <a href="#donar" class="btn btn-line">Conversemos</a>
+      </div>
+    </div>
+    <p class="emp-note reveal"><b>¿Sos una empresa grande?</b> Además del auspicio, se puede colaborar con voluntariado, colectas entre empleados y donación de producto. Escribinos y lo armamos juntos.</p>
+  </div>
+</section>
+
+<!-- ALBUM -->
+<section id="album" class="rule-top">
+  <div class="wrap">
+    <div class="kicker"><h2>La casa <em>por dentro</em></h2><span class="marg" style="transform:rotate(-2deg)">pronto, fotos de verdad</span></div>
+    <div class="album">
+      <figure class="taped reveal"><div class="ph" style="aspect-ratio:1"><span>foto</span></div><figcaption class="cap">el patio</figcaption></figure>
+      <figure class="taped reveal"><div class="ph" style="aspect-ratio:1"><span>foto</span></div><figcaption class="cap">la cocina</figcaption></figure>
+      <figure class="taped reveal"><div class="ph" style="aspect-ratio:1"><span>foto</span></div><figcaption class="cap">una pieza</figcaption></figure>
+      <figure class="taped reveal"><div class="ph" style="aspect-ratio:1"><span>foto</span></div><figcaption class="cap">la mesa larga</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTOS -->
+<section id="eventos" class="rule-top">
+  <div class="wrap">
+    <div class="kicker"><h2>Novedades</h2></div>
+    <div class="clips">
+      <article class="clip reveal"><div class="ph"><span>imagen</span></div><div class="b"><div class="d">próximo evento</div><h3>Cena a beneficio</h3><p>Una noche para acompañar a la casa. Fecha y lugar, a confirmar.</p></div></article>
+      <article class="clip reveal"><div class="ph"><span>imagen</span></div><div class="b"><div class="d">campaña abierta</div><h3>Hacete padrino</h3><p>Sumate con un aporte mensual y ayudanos a sostener la casa todo el año.</p></div></article>
+      <article class="clip reveal"><div class="ph"><span>imagen</span></div><div class="b"><div class="d">voluntariado</div><h3>Manos a la obra</h3><p>Vení a ayudar a poner la casa a punto. Escribinos para participar.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCIA -->
+<section id="transparencia" class="rule-top">
+  <div class="wrap">
+    <div class="kicker"><h2>Poca estructura, <em>cuentas claras</em></h2></div>
+    <div class="trust">
+      <div class="titem reveal"><b>Personería jurídica</b><p>Asociación civil inscripta. Estatuto y autoridades a la vista.</p></div>
+      <div class="titem reveal"><b>Balances</b><p>Cada año publicamos memoria y balance aprobados en asamblea.</p></div>
+      <div class="titem reveal"><b>Rendimos a quien ayuda</b><p>Cada padrino recibe su informe con fotos cada tres meses.</p></div>
+      <div class="titem reveal"><b>Certificado ARCA</b><p>En trámite. Al salir, cualquiera lo verifica por CUIT en la web de ARCA.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DONAR -->
+<section id="donar" class="rule-top">
+  <div class="wrap donar">
+    <div class="reveal">
+      <span class="eyebrow">Quiero ayudar</span>
+      <h2 style="margin-top:10px">Cada aporte se convierte en <em>una familia acompañada</em>.</h2>
+      <p class="lead">Personas y empresas, una vez o —ojalá— todos los meses. Toda ayuda entra a la cuenta de la asociación, nunca a la de una persona. Lo que más nos sirve es el aporte mensual: es lo que nos deja planificar.</p>
+      <p class="marg">gracias por acercarte hasta acá ✿</p>
+    </div>
+    <div class="note-card reveal">
+      <div class="alias-hero">
+        <span class="alias-lbl">Transferí al alias</span>
+        <div class="alias-row">
+          <b id="aliasVal">HOGAR.MARADONA</b>
+          <button class="copy" onclick="copiarAlias()" id="copyBtn">copiar</button>
+        </div>
+      </div>
+      <div class="line"><span>Titular</span><b>Asoc. Civ. Hogar Esteban Maradona</b></div>
+      <div class="line"><span>CBU</span><b>________________________</b></div>
+      <div class="line"><span>CUIT</span><b>__ - ________ - _</b></div>
+      <p class="tip">Toda ayuda entra a la cuenta de la asociación, nunca a la de una persona. Si querés ser <b>padrino mensual</b>, escribinos y coordinamos.</p>
+      <div class="gr">¡gracias, en serio!</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <span class="h">Hogar Esteban Maradona</span>
+        <p>Asociación Civil Formoseña Hogar de Tránsito para el Desamparado. Acompañamos a niños en tratamiento médico y a sus familias, del interior del país.</p>
+      </div>
+      <div><h4>La casa</h4><ul><li><a href="#nosotros">Quiénes somos</a></li><li><a href="#sostener">Sostener la casa</a></li><li><a href="#empresas">Empresas</a></li><li><a href="#transparencia">Transparencia</a></li></ul></div>
+      <div><h4>Encontranos</h4><ul><li>Av. Córdoba 6500, CABA</li><li><a href="mailto:asociacionhogardoctormaradona@gmail.com">asociacionhogardoctormaradona@gmail.com</a></li><li><a href="https://wa.me/5491151367113" target="_blank" rel="noopener">WhatsApp: +54 9 11 5136-7113</a></li><li>Instagram · pronto</li></ul></div>
+    </div>
+    <div class="fbot"><span>© 2026 Hogar Esteban Maradona</span><span>Hecho a pulmón, y con mucha esperanza.</span></div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  function copiarAlias(){
+    const alias=document.getElementById('aliasVal').textContent.trim();
+    const btn=document.getElementById('copyBtn');
+    const done=()=>{btn.textContent='¡copiado!';btn.classList.add('ok');setTimeout(()=>{btn.textContent='copiar';btn.classList.remove('ok')},1800)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(alias).then(done).catch(done)}
+    else{const t=document.createElement('textarea');t.value=alias;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(t);done()}
+  }
+</script>
+<a class="wa-float" href="https://wa.me/5491151367113?text=Hola%2C%20quiero%20ayudar%20al%20Hogar%20Esteban%20Maradona" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.7-.84-2-.94-.26-.1-.45-.14-.64.14-.19.29-.73.94-.9 1.13-.16.19-.33.21-.62.07-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.72-1.61-2-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49-.16-.01-.36-.01-.55-.01-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.4 0 1.42 1.03 2.78 1.18 2.98.14.19 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.61.69.22 1.32.19 1.81.11.55-.08 1.7-.69 1.94-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34zM12.05 21.5h-.01a9.5 9.5 0 0 1-4.83-1.32l-.35-.21-3.59.94.96-3.5-.23-.36a9.45 9.45 0 0 1-1.45-5.04c0-5.23 4.26-9.49 9.5-9.49 2.54 0 4.92.99 6.71 2.78a9.42 9.42 0 0 1 2.78 6.72c0 5.23-4.26 9.49-9.5 9.49zm8.08-17.57A11.38 11.38 0 0 0 12.05.6C5.8.6.72 5.68.72 11.92c0 2.1.55 4.15 1.6 5.96L.62 24l6.26-1.64a11.33 11.33 0 0 0 5.42 1.38h.01c6.24 0 11.32-5.08 11.32-11.32 0-3.03-1.18-5.87-3.32-8.01z"/></svg>
+  <span class="wa-txt">Escribinos por WhatsApp</span>
+</a>
+
+</body>
+</html>

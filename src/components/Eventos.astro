@@ -1,0 +1,42 @@
+---
+import { getCollection, render } from 'astro:content';
+
+const eventos = (await getCollection('eventos', ({ data }) => data.activo)).sort(
+  (a, b) => a.data.orden - b.data.orden
+);
+
+const rendered = await Promise.all(
+  eventos.map(async (evento) => {
+    const { Content } = await render(evento);
+    return { evento, Content };
+  })
+);
+---
+
+<section id="eventos" class="rule-top">
+  <div class="wrap">
+    <div class="kicker"><h2>Novedades</h2></div>
+    <div class="clips">
+      {
+        rendered.map(({ evento, Content }) => (
+          <article class="clip reveal">
+            {evento.data.imagen ? (
+              <img src={evento.data.imagen} alt={evento.data.titulo} loading="lazy" />
+            ) : (
+              <div class="ph">
+                <span>imagen</span>
+              </div>
+            )}
+            <div class="b">
+              <div class="d">{evento.data.etiqueta}</div>
+              <h3>{evento.data.titulo}</h3>
+              <p>
+                <Content />
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

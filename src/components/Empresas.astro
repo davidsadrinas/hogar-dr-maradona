@@ -1,0 +1,85 @@
+---
+import tiers from '../data/tiers.json';
+// OJO: el cuadro fiscal de abajo (tags HOY / PRONTO) es contenido sensible.
+// No cambiar la redacción sin pasar por el criterio fiscal acordado:
+// auspicio deducible hoy como gasto de publicidad; donación deducible recién
+// al obtener el certificado de ARCA (en trámite).
+---
+
+<section id="empresas" class="rule-top">
+  <div class="wrap">
+    <div class="emp-top">
+      <div class="reveal">
+        <span class="eyebrow">Tu empresa puede ayudar</span>
+        <h2
+          class="serif"
+          style="font-size:clamp(28px,3.8vw,42px);font-weight:400;margin-top:10px;letter-spacing:-.02em"
+        >
+          Acompañar hoy, <em style="font-style:italic;color:var(--sun-deep)"
+            >con beneficio fiscal</em
+          > desde el primer aporte.
+        </h2>
+        <p class="lead">
+          Elegí la vía que mejor le sirve a tu empresa. El auspicio se deduce como gasto
+          de publicidad —al 100%, sin tope— y no depende de ningún trámite pendiente.
+        </p>
+      </div>
+      <div class="fiscal reveal">
+        <div class="frow">
+          <span class="ftag now">HOY</span>
+          <div>
+            <b>Auspicio / sponsoreo</b>
+            <p>
+              Deducible al 100% como gasto de publicidad. Sin tope. A cambio, tu marca
+              acompaña a la casa.
+            </p>
+          </div>
+        </div>
+        <div class="frow">
+          <span class="ftag soon">PRONTO</span>
+          <div>
+            <b>Donación</b>
+            <p>
+              Deducible hasta el 5% de la ganancia neta cuando tengamos el certificado de
+              ARCA, hoy en trámite.
+            </p>
+          </div>
+        </div>
+        <div class="frow">
+          <span class="ftag now">HOY</span>
+          <div>
+            <b>En especie</b>
+            <p>Alimentos, insumos y equipamiento. Los recibimos ahora, con acta y valuación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tiers">
+      {
+        tiers.items.map((t) => (
+          <div class:list={['tier', 'reveal', { feat: t.feat }]}>
+            {t.feat && <span class="fl stamp">{t.destacado}</span>}
+            <span class="n">{t.nights}</span>
+            <h3>{t.nombre}</h3>
+            <div class="amt">
+              {t.monto} {t.periodo && <small>{t.periodo}</small>}
+            </div>
+            <ul>
+              {t.beneficios.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+            <a href="#donar" class:list={['btn', t.feat ? 'btn-sun' : 'btn-line']}>
+              {t.cta}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+    <p class="emp-note reveal">
+      <b>¿Sos una empresa grande?</b> Además del auspicio, se puede colaborar con
+      voluntariado, colectas entre empleados y donación de producto. Escribinos y lo
+      armamos juntos.
+    </p>
+  </div>
+</section>

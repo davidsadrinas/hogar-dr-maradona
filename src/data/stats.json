@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "valor": "+120", "detalle": "familias acompañadas", "ejemplo": true },
+    { "valor": "8", "detalle": "provincias que llegaron", "ejemplo": true },
+    { "valor": "$0", "detalle": "les costó a ellas", "ejemplo": false },
+    { "valor": "100%", "detalle": "a pulmón, de la comunidad", "ejemplo": true }
+  ],
+  "nota": "* números de ejemplo — los cambiamos por los reales apenas los tengamos"
+}

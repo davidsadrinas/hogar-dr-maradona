@@ -1,0 +1,26 @@
+---
+import stats from '../data/stats.json';
+const hayEjemplos = stats.items.some((s) => s.ejemplo);
+---
+
+<section class="rule-top">
+  <div class="wrap">
+    <div class="ledger reveal">
+      <span class="stamp">Nuestro año</span>
+      <div class="ledrow">
+        {
+          stats.items.map((s) => (
+            <div class="led">
+              <b>
+                {s.valor}
+                {s.ejemplo && <i>*</i>}
+              </b>
+              <span>{s.detalle}</span>
+            </div>
+          ))
+        }
+      </div>
+      {hayEjemplos && <p class="foot">{stats.nota}</p>}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+---
+import site from '../data/site.json';
+---
+
+<section id="donar" class="rule-top">
+  <div class="wrap donar">
+    <div class="reveal">
+      <span class="eyebrow">Quiero ayudar</span>
+      <h2 style="margin-top:10px">
+        Cada aporte se convierte en <em>una familia acompañada</em>.
+      </h2>
+      <p class="lead">
+        Personas y empresas, una vez o —ojalá— todos los meses. Toda ayuda entra a la
+        cuenta de la asociación, nunca a la de una persona. Lo que más nos sirve es el
+        aporte mensual: es lo que nos deja planificar.
+      </p>
+      <p class="marg">gracias por acercarte hasta acá ✿</p>
+    </div>
+    <div class="note-card reveal">
+      <div class="alias-hero">
+        <span class="alias-lbl">Transferí al alias</span>
+        <div class="alias-row">
+          <b id="aliasVal">{site.alias}</b>
+          <button class="copy" id="copyBtn">copiar</button>
+        </div>
+      </div>
+      <div class="line"><span>Titular</span><b>{site.titular}</b></div>
+      <div class="line"><span>CBU</span><b>{site.cbu}</b></div>
+      <div class="line"><span>CUIT</span><b>{site.cuit}</b></div>
+      <p class="tip">
+        Toda ayuda entra a la cuenta de la asociación, nunca a la de una persona. Si
+        querés ser <b>padrino mensual</b>, escribinos y coordinamos.
+      </p>
+      <div class="gr">¡gracias, en serio!</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const btn = document.getElementById('copyBtn');
+  const aliasEl = document.getElementById('aliasVal');
+  btn?.addEventListener('click', () => {
+    const alias = aliasEl?.textContent?.trim() ?? '';
+    const done = () => {
+      btn.textContent = '¡copiado!';
+      btn.classList.add('ok');
+      setTimeout(() => {
+        btn.textContent = 'copiar';
+        btn.classList.remove('ok');
+      }, 1800);
+    };
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(alias).then(done).catch(done);
+    } else {
+      const t = document.createElement('textarea');
+      t.value = alias;
+      document.body.appendChild(t);
+      t.select();
+      try {
+        document.execCommand('copy');
+      } catch (e) {}
+      document.body.removeChild(t);
+      done();
+    }
+  });
+</script>

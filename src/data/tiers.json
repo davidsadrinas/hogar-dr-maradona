@@ -1,0 +1,45 @@
+{
+  "items": [
+    {
+      "nombre": "Colaborador",
+      "nights": "Acompaña un mes",
+      "monto": "$ ____",
+      "periodo": "/ mes",
+      "feat": false,
+      "cta": "Quiero sumarme",
+      "beneficios": [
+        "Tu logo en la sección Empresas",
+        "Mención en la memoria anual",
+        "Comprobante deducible al 100%"
+      ]
+    },
+    {
+      "nombre": "Padrino de habitación",
+      "nights": "Apadrina una habitación",
+      "monto": "$ ____",
+      "periodo": "/ mes",
+      "feat": true,
+      "destacado": "El que más sostiene",
+      "cta": "Apadrinar una pieza",
+      "beneficios": [
+        "Placa con tu nombre en la puerta",
+        "Informe con fotos cada tres meses",
+        "Logo en la casa y en el newsletter",
+        "Comprobante deducible al 100%"
+      ]
+    },
+    {
+      "nombre": "Socio principal",
+      "nights": "Sostiene un programa",
+      "monto": "A convenir",
+      "periodo": "",
+      "feat": false,
+      "cta": "Conversemos",
+      "beneficios": [
+        "Todo lo anterior",
+        "Presencia en el evento anual",
+        "Comunicación en conjunto"
+      ]
+    }
+  ]
+}

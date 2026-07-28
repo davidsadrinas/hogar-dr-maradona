@@ -1,0 +1,28 @@
+# Deploy automático a Vercel en cada push a main.
+# Existe porque el proyecto no usa la integración nativa GitHub↔Vercel
+# (la app de GitHub de Vercel no está instalada en la cuenta). Si algún día
+# se conecta la integración nativa, borrar este workflow para no deployar
+# dos veces.
+name: Deploy a Vercel
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-vercel
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Deploy a producción
+        run: npx vercel@latest deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

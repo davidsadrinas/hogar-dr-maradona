@@ -5,6 +5,21 @@ Sitio estático hecho con [Astro](https://astro.build), deployado en Vercel.
 
 ## Cómo editar el contenido (sin tocar código)
 
+### Opción A — Panel visual (PagesCMS, recomendado)
+
+1. Entrar a **https://app.pagescms.org** e iniciar sesión con GitHub.
+2. Elegir el repo `davidsadrinas/hogar-dr-maradona`.
+3. Editar desde el menú: **Novedades y eventos**, **Contacto y datos de la cuenta**,
+   **Números del año** o **Auspicios (empresas)**. Guardar hace el commit solo.
+
+Para dar acceso a otra persona (ej. Vicky): necesita una cuenta de GitHub y que la
+invites como colaboradora del repo (Settings → Collaborators). Después entra a
+pagescms.org con su cuenta y ve el mismo panel.
+
+Lo que se puede editar desde el panel está definido en `.pages.yml`.
+
+### Opción B — Editar los archivos directo
+
 Todo lo que cambia seguido vive en archivos de datos. Editás el archivo, hacés commit
 a `main`, y Vercel publica el sitio actualizado solo (tarda ~1 minuto).
 

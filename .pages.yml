@@ -1,0 +1,148 @@
+# Configuración de PagesCMS (https://pagescms.org)
+# Define qué puede editarse desde el panel visual, sin tocar código.
+
+media:
+  input: public/uploads
+  output: /uploads
+
+content:
+  - name: eventos
+    label: Novedades y eventos
+    type: collection
+    path: src/content/eventos
+    view:
+      fields: [titulo, etiqueta, activo]
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+        required: true
+      - name: etiqueta
+        label: Etiqueta
+        type: string
+        description: "Ej: próximo evento, campaña abierta, voluntariado"
+      - name: fecha
+        label: Fecha
+        type: date
+        required: false
+      - name: imagen
+        label: Imagen
+        type: image
+        required: false
+      - name: orden
+        label: Orden (menor = primero)
+        type: number
+        default: 0
+      - name: activo
+        label: "¿Mostrar en el sitio?"
+        type: boolean
+        default: true
+      - name: body
+        label: Descripción
+        type: rich-text
+
+  - name: site
+    label: Contacto y datos de la cuenta
+    type: file
+    path: src/data/site.json
+    fields:
+      - name: nombre
+        label: Nombre de la casa
+        type: string
+      - name: nombreLegal
+        label: Nombre legal
+        type: string
+      - name: tagline
+        label: Bajada (header)
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: whatsapp
+        label: WhatsApp (solo números, con 549)
+        type: string
+      - name: whatsappDisplay
+        label: WhatsApp (como se muestra)
+        type: string
+      - name: direccion
+        label: Dirección
+        type: string
+      - name: instagram
+        label: Instagram (URL completa, vacío = "pronto")
+        type: string
+        required: false
+      - name: alias
+        label: Alias para transferencias
+        type: string
+      - name: titular
+        label: Titular de la cuenta
+        type: string
+      - name: cbu
+        label: CBU
+        type: string
+      - name: cuit
+        label: CUIT
+        type: string
+
+  - name: stats
+    label: Números del año
+    type: file
+    path: src/data/stats.json
+    fields:
+      - name: items
+        label: Números
+        type: object
+        list: true
+        fields:
+          - name: valor
+            label: Número (ej. +120)
+            type: string
+          - name: detalle
+            label: Descripción
+            type: string
+          - name: ejemplo
+            label: "¿Es dato de ejemplo?"
+            type: boolean
+            default: true
+      - name: nota
+        label: Nota al pie (se muestra si hay datos de ejemplo)
+        type: string
+
+  - name: tiers
+    label: Auspicios (empresas)
+    type: file
+    path: src/data/tiers.json
+    fields:
+      - name: items
+        label: Niveles de auspicio
+        type: object
+        list: true
+        fields:
+          - name: nombre
+            label: Nombre
+            type: string
+          - name: nights
+            label: Equivale a (ej. Apadrina una habitación)
+            type: string
+          - name: monto
+            label: Monto (ej. $ 250.000 o "A convenir")
+            type: string
+          - name: periodo
+            label: Período (ej. "/ mes", vacío si no aplica)
+            type: string
+            required: false
+          - name: feat
+            label: "¿Destacado?"
+            type: boolean
+            default: false
+          - name: destacado
+            label: Etiqueta del destacado (ej. El que más sostiene)
+            type: string
+            required: false
+          - name: cta
+            label: Texto del botón
+            type: string
+          - name: beneficios
+            label: Beneficios
+            type: string
+            list: true

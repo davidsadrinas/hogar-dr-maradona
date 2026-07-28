@@ -38,9 +38,17 @@ npm run build     # genera el sitio estático en dist/
 
 ## Deploy
 
-Conectado a Vercel: cada push a `main` en GitHub
-([davidsadrinas/hogar-dr-maradona](https://github.com/davidsadrinas/hogar-dr-maradona))
-dispara un deploy automático. No hay que hacer nada más.
+El proyecto vive en Vercel (`davidsadrinas-projects/hogar-dr-maradona`). Para publicar
+cambios:
+
+```sh
+vercel deploy --prod
+```
+
+**Recomendado (una sola vez):** conectar el repo de GitHub en el dashboard de Vercel
+(Project → Settings → Git → Connect) para que cada push a `main` en
+[davidsadrinas/hogar-dr-maradona](https://github.com/davidsadrinas/hogar-dr-maradona)
+publique solo, sin correr comandos.
 
 Cuando esté el dominio `.org.ar`, cambiar `site` en `astro.config.mjs` y la URL del
 sitemap en `public/robots.txt`, y agregar el dominio en el panel de Vercel.

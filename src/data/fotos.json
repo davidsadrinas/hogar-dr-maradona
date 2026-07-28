@@ -1,0 +1,12 @@
+{
+  "hero": { "src": "", "caption": "nuestra casa, en Av. Córdoba 6500" },
+  "nosotros": { "src": "", "caption": "la mesa donde comemos todos" },
+  "maradona": { "src": "", "caption": "Dr. Esteban Laureano Maradona (1895–1995)" },
+  "historia": { "src": "", "caption": "Marta y su nena, antes de volver a casa" },
+  "album": [
+    { "src": "", "caption": "el patio" },
+    { "src": "", "caption": "la cocina" },
+    { "src": "", "caption": "una pieza" },
+    { "src": "", "caption": "la mesa larga" }
+  ]
+}

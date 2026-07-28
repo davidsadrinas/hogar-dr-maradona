@@ -5,18 +5,25 @@ Sitio estático hecho con [Astro](https://astro.build), deployado en Vercel.
 
 ## Cómo editar el contenido (sin tocar código)
 
-### Opción A — Panel visual (PagesCMS, recomendado)
+### Opción A — Panel de administración en /admin (recomendado)
 
-1. Entrar a **https://app.pagescms.org** e iniciar sesión con GitHub.
-2. Elegir el repo `davidsadrinas/hogar-dr-maradona`.
-3. Editar desde el menú: **Novedades y eventos**, **Contacto y datos de la cuenta**,
-   **Números del año** o **Auspicios (empresas)**. Guardar hace el commit solo.
+Entrar a **https://hogar-dr-maradona.vercel.app/admin** (o `/login`, que redirige ahí)
+e iniciar sesión con GitHub. Desde el panel se puede:
 
-Para dar acceso a otra persona (ej. Vicky): necesita una cuenta de GitHub y que la
-invites como colaboradora del repo (Settings → Collaborators). Después entra a
-pagescms.org con su cuenta y ve el mismo panel.
+- Crear, editar y despublicar **novedades y eventos** (con imagen y fecha).
+- Subir y cambiar **todas las fotos del sitio** (portada, la mesa, el retrato del
+  doctor, la historia y el álbum) con sus leyendas.
+- Editar **contacto y cuenta** (alias, CBU, CUIT, email, WhatsApp, Instagram…).
+- Editar los **números del año** y los **niveles de auspicio**.
 
-Lo que se puede editar desde el panel está definido en `.pages.yml`.
+Cada guardado hace un commit al repo y el sitio se republica solo.
+
+**Acceso:** la persona necesita una cuenta de GitHub invitada como colaboradora del
+repo (GitHub → Settings → Collaborators). El panel usa Decap CMS
+(`public/admin/config.yml` define qué se puede editar) con un login OAuth propio
+(`src/pages/api/auth.ts` y `callback.ts`). Requiere dos variables de entorno en
+Vercel: `OAUTH_GITHUB_CLIENT_ID` y `OAUTH_GITHUB_CLIENT_SECRET` (de una GitHub
+OAuth App con callback `https://hogar-dr-maradona.vercel.app/api/callback`).
 
 ### Opción B — Editar los archivos directo
 

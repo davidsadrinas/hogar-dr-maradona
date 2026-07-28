@@ -1,0 +1,20 @@
+---
+// Foto con fallback: si no hay imagen cargada muestra el placeholder rayado.
+interface Props {
+  src?: string | null;
+  alt?: string;
+  aspect?: string;
+  placeholder?: string;
+}
+const { src, alt = '', aspect = '4/5', placeholder = 'foto' } = Astro.props;
+---
+
+{
+  src ? (
+    <img class="foto" src={src} alt={alt} style={`aspect-ratio:${aspect}`} loading="lazy" />
+  ) : (
+    <div class="ph" style={`aspect-ratio:${aspect}`}>
+      <span>{placeholder}</span>
+    </div>
+  )
+}

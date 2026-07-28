@@ -1,3 +1,8 @@
+---
+import Foto from './Foto.astro';
+import fotos from '../data/fotos.json';
+---
+
 <section id="maradona" class="rule-top">
   <div class="wrap">
     <div class="kicker">
@@ -9,8 +14,13 @@
     <div class="spread spread-retrato">
       <div class="aside reveal">
         <figure class="taped" style="transform:rotate(-2deg)">
-          <div class="ph" style="aspect-ratio:4/5"><span>retrato del Dr. Maradona</span></div>
-          <figcaption class="cap">Dr. Esteban Laureano Maradona (1895–1995)</figcaption>
+          <Foto
+            src={fotos.maradona.src}
+            alt={fotos.maradona.caption}
+            aspect="4/5"
+            placeholder="retrato del Dr. Maradona"
+          />
+          <figcaption class="cap">{fotos.maradona.caption}</figcaption>
         </figure>
       </div>
       <div class="body reveal">

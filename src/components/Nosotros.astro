@@ -1,3 +1,8 @@
+---
+import Foto from './Foto.astro';
+import fotos from '../data/fotos.json';
+---
+
 <section id="nosotros" class="rule-top">
   <div class="wrap">
     <div class="kicker"><span class="eyebrow">Quiénes somos</span></div>
@@ -37,10 +42,13 @@
       </div>
       <div class="aside reveal">
         <figure class="taped">
-          <div class="ph" style="aspect-ratio:5/4">
-            <span>una foto de la cocina, la mesa, el patio…</span>
-          </div>
-          <figcaption class="cap">la mesa donde comemos todos</figcaption>
+          <Foto
+            src={fotos.nosotros.src}
+            alt={fotos.nosotros.caption}
+            aspect="5/4"
+            placeholder="una foto de la cocina, la mesa, el patio…"
+          />
+          <figcaption class="cap">{fotos.nosotros.caption}</figcaption>
         </figure>
         <p class="note">acompañar a la familia entera, no sólo al que está enfermo ✿</p>
       </div>

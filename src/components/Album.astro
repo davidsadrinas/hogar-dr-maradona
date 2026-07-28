@@ -1,25 +1,26 @@
 ---
-const fotos = [
-  { caption: 'el patio' },
-  { caption: 'la cocina' },
-  { caption: 'una pieza' },
-  { caption: 'la mesa larga' },
-];
+import Foto from './Foto.astro';
+import fotos from '../data/fotos.json';
+const hayFotosReales = fotos.album.some((f) => f.src);
 ---
 
 <section id="album" class="rule-top">
   <div class="wrap">
     <div class="kicker">
       <h2>La casa <em>por dentro</em></h2>
-      <span class="marg" style="transform:rotate(-2deg)">pronto, fotos de verdad</span>
+      {
+        !hayFotosReales && (
+          <span class="marg" style="transform:rotate(-2deg)">
+            pronto, fotos de verdad
+          </span>
+        )
+      }
     </div>
     <div class="album">
       {
-        fotos.map((f) => (
+        fotos.album.map((f) => (
           <figure class="taped reveal">
-            <div class="ph" style="aspect-ratio:1">
-              <span>foto</span>
-            </div>
+            <Foto src={f.src} alt={f.caption} aspect="1" placeholder="foto" />
             <figcaption class="cap">{f.caption}</figcaption>
           </figure>
         ))

@@ -1,9 +1,19 @@
+---
+import Foto from './Foto.astro';
+import fotos from '../data/fotos.json';
+---
+
 <section id="historia" class="rule-top">
   <div class="wrap">
     <div class="spread">
       <figure class="taped reveal">
-        <div class="ph" style="aspect-ratio:4/5"><span>foto de la historia (con permiso)</span></div>
-        <figcaption class="cap">Marta y su nena, antes de volver a casa</figcaption>
+        <Foto
+          src={fotos.historia.src}
+          alt={fotos.historia.caption}
+          aspect="4/5"
+          placeholder="foto de la historia (con permiso)"
+        />
+        <figcaption class="cap">{fotos.historia.caption}</figcaption>
       </figure>
       <div class="txt reveal">
         <span class="lbl">Una historia de la casa</span>

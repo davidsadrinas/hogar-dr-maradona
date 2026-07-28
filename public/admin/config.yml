@@ -1,0 +1,122 @@
+backend:
+  name: github
+  repo: davidsadrinas/hogar-dr-maradona
+  branch: main
+  base_url: https://hogar-dr-maradona.vercel.app
+  auth_endpoint: api/auth
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+publish_mode: simple
+
+collections:
+  # ---- EVENTOS / NOVEDADES (se crean y borran) ----
+  - name: "eventos"
+    label: "Novedades y eventos"
+    folder: "src/content/eventos"
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    identifier_field: titulo
+    summary: "{{titulo}} — {{etiqueta}}"
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Etiqueta", name: "etiqueta", widget: "string", hint: "Ej: próximo evento, campaña abierta, voluntariado" }
+      - { label: "Fecha", name: "fecha", widget: "datetime", required: false }
+      - { label: "Imagen", name: "imagen", widget: "image", required: false }
+      - { label: "Orden (menor sale primero)", name: "orden", widget: "number", default: 0 }
+      - { label: "¿Mostrar en el sitio?", name: "activo", widget: "boolean", default: true }
+      - { label: "Descripción", name: "body", widget: "markdown" }
+
+  # ---- FOTOS DE LA CASA ----
+  - name: "fotos"
+    label: "Fotos del sitio"
+    files:
+      - name: "fotos"
+        label: "Fotos de cada sección"
+        file: "src/data/fotos.json"
+        fields:
+          - label: "Portada (la casa)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Foto", name: "src", widget: "image", required: false, hint: "Vertical, ideal 4:5" }
+              - { label: "Leyenda", name: "caption", widget: "string" }
+          - label: "Quiénes somos (la mesa)"
+            name: "nosotros"
+            widget: "object"
+            fields:
+              - { label: "Foto", name: "src", widget: "image", required: false, hint: "Horizontal, ideal 5:4" }
+              - { label: "Leyenda", name: "caption", widget: "string" }
+          - label: "Retrato del Dr. Maradona"
+            name: "maradona"
+            widget: "object"
+            fields:
+              - { label: "Foto", name: "src", widget: "image", required: false, hint: "Vertical, ideal 4:5" }
+              - { label: "Leyenda", name: "caption", widget: "string" }
+          - label: "Una historia de la casa"
+            name: "historia"
+            widget: "object"
+            fields:
+              - { label: "Foto", name: "src", widget: "image", required: false, hint: "Vertical, ideal 4:5. Solo con permiso de la familia." }
+              - { label: "Leyenda", name: "caption", widget: "string" }
+          - label: "Álbum — La casa por dentro"
+            name: "album"
+            widget: "list"
+            allow_add: true
+            fields:
+              - { label: "Foto", name: "src", widget: "image", required: false, hint: "Cuadrada, ideal 1:1" }
+              - { label: "Leyenda", name: "caption", widget: "string" }
+
+  # ---- DATOS DE LA CASA ----
+  - name: "datos"
+    label: "Datos de la casa"
+    files:
+      - name: "site"
+        label: "Contacto y cuenta"
+        file: "src/data/site.json"
+        fields:
+          - { label: "Nombre", name: "nombre", widget: "string" }
+          - { label: "Nombre legal", name: "nombreLegal", widget: "string" }
+          - { label: "Bajada (header)", name: "tagline", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "WhatsApp (solo números, empieza con 549)", name: "whatsapp", widget: "string" }
+          - { label: "WhatsApp (como se muestra)", name: "whatsappDisplay", widget: "string" }
+          - { label: "Dirección", name: "direccion", widget: "string" }
+          - { label: "Instagram (URL completa; vacío = «pronto»)", name: "instagram", widget: "string", required: false }
+          - { label: "Alias para transferencias", name: "alias", widget: "string" }
+          - { label: "Titular de la cuenta", name: "titular", widget: "string" }
+          - { label: "CBU", name: "cbu", widget: "string" }
+          - { label: "CUIT", name: "cuit", widget: "string" }
+
+      - name: "stats"
+        label: "Números del año"
+        file: "src/data/stats.json"
+        fields:
+          - label: "Números"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Número (ej. +120)", name: "valor", widget: "string" }
+              - { label: "Descripción", name: "detalle", widget: "string" }
+              - { label: "¿Es dato de ejemplo?", name: "ejemplo", widget: "boolean", default: true }
+          - { label: "Nota al pie (aparece si hay datos de ejemplo)", name: "nota", widget: "string" }
+
+      - name: "tiers"
+        label: "Auspicios (empresas)"
+        file: "src/data/tiers.json"
+        fields:
+          - label: "Niveles de auspicio"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - { label: "Equivale a", name: "nights", widget: "string" }
+              - { label: "Monto (ej. $ 250.000 o «A convenir»)", name: "monto", widget: "string" }
+              - { label: "Período (ej. «/ mes»; vacío si no aplica)", name: "periodo", widget: "string", required: false }
+              - { label: "¿Destacado?", name: "feat", widget: "boolean", default: false }
+              - { label: "Etiqueta del destacado", name: "destacado", widget: "string", required: false }
+              - { label: "Texto del botón", name: "cta", widget: "string" }
+              - { label: "Beneficios", name: "beneficios", widget: "list" }

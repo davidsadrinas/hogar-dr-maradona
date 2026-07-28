@@ -1,5 +1,5 @@
 ---
-titulo: Cena a beneficio
+titulo: Cena a beneficioooo
 etiqueta: próximo evento
 orden: 1
 activo: true

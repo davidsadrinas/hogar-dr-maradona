@@ -23,7 +23,13 @@ const hayFotosReales = fotos.album.some((f) => f.src);
       {
         fotos.album.map((f) => (
           <figure class="taped reveal">
-            <Foto src={f.src} alt={f.caption} aspect="1" placeholder="foto" />
+            <Foto
+              src={f.src}
+              alt={f.caption}
+              orientacion={f.orientacion}
+              porDefecto="cuadrada"
+              placeholder="foto"
+            />
             <figcaption class="cap">{f.caption}</figcaption>
           </figure>
         ))

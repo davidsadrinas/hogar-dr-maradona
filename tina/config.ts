@@ -4,6 +4,20 @@ import { defineConfig } from 'tinacms';
 // *palabras* → cursiva en color (sol) · **palabras** → negrita.
 const HINT_DESTACADO = 'Lo que pongas entre *asteriscos* sale en cursiva color sol; entre **doble asterisco**, en negrita.';
 
+// Forma del recuadro de cada foto. El marco recorta la imagen a esta
+// proporción (ver src/lib/aspect.ts), así la grilla del sitio no se descuadra.
+const ORIENTACION = {
+  type: 'string' as const,
+  name: 'orientacion',
+  label: 'Forma del recuadro',
+  description: 'Elegí la que mejor le quede a la foto. Si no estás segura, probá y mirá el sitio.',
+  options: [
+    { value: 'horizontal', label: 'Horizontal (apaisada)' },
+    { value: 'vertical', label: 'Vertical (parada)' },
+    { value: 'cuadrada', label: 'Cuadrada' },
+  ],
+};
+
 const branch =
   process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || 'main';
 
@@ -259,8 +273,9 @@ export default defineConfig({
             name: 'hero',
             label: 'Portada (la casa)',
             fields: [
-              { type: 'image', name: 'src', label: 'Foto (vertical, ideal 4:5)' },
+              { type: 'image', name: 'src', label: 'Foto' },
               { type: 'string', name: 'caption', label: 'Leyenda' },
+              ORIENTACION,
             ],
           },
           {
@@ -268,8 +283,9 @@ export default defineConfig({
             name: 'nosotros',
             label: 'Quiénes somos (la mesa)',
             fields: [
-              { type: 'image', name: 'src', label: 'Foto (horizontal, ideal 5:4)' },
+              { type: 'image', name: 'src', label: 'Foto' },
               { type: 'string', name: 'caption', label: 'Leyenda' },
+              ORIENTACION,
             ],
           },
           {
@@ -277,8 +293,9 @@ export default defineConfig({
             name: 'maradona',
             label: 'Retrato del Dr. Maradona',
             fields: [
-              { type: 'image', name: 'src', label: 'Foto (vertical, ideal 4:5)' },
+              { type: 'image', name: 'src', label: 'Foto' },
               { type: 'string', name: 'caption', label: 'Leyenda' },
+              ORIENTACION,
             ],
           },
           {
@@ -288,6 +305,7 @@ export default defineConfig({
             fields: [
               { type: 'image', name: 'src', label: 'Foto (solo con permiso de la familia)' },
               { type: 'string', name: 'caption', label: 'Leyenda' },
+              ORIENTACION,
             ],
           },
           {
@@ -297,8 +315,9 @@ export default defineConfig({
             list: true,
             ui: { itemProps: (item) => ({ label: item?.caption || 'Foto' }) },
             fields: [
-              { type: 'image', name: 'src', label: 'Foto (cuadrada, ideal 1:1)' },
+              { type: 'image', name: 'src', label: 'Foto' },
               { type: 'string', name: 'caption', label: 'Leyenda' },
+              ORIENTACION,
             ],
           },
         ],

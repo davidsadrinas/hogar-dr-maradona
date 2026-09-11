@@ -3,7 +3,9 @@ import Foto from './Foto.astro';
 import fotos from '../data/fotos.json';
 import textos from '../data/textos.json';
 import { emify } from '../lib/emify';
+import { aspecto } from '../lib/aspect';
 const t = textos.hero;
+const ratioHero = aspecto(fotos.hero.orientacion);
 ---
 
 <section class="hero">
@@ -48,9 +50,13 @@ const t = textos.hero;
       <figure class="taped reveal">
         {
           fotos.hero.src ? (
-            <Foto src={fotos.hero.src} alt={fotos.hero.caption} aspect="4/5" />
+            <Foto
+              src={fotos.hero.src}
+              alt={fotos.hero.caption}
+              orientacion={fotos.hero.orientacion}
+            />
           ) : (
-            <div class="ph" style="aspect-ratio:4/5">
+            <div class="ph" style={`aspect-ratio:${ratioHero}`}>
               <svg
                 width="30"
                 height="30"

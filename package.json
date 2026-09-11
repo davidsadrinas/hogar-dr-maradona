@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c \"astro dev\"",
-    "build": "if [ -n \"$TINA_PUBLIC_CLIENT_ID\" ]; then tinacms build; fi && astro build",
+    "build": "if [ -n \"$TINA_PUBLIC_CLIENT_ID\" ]; then tinacms build --skip-cloud-checks; fi && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
